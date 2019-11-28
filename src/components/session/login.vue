@@ -56,8 +56,8 @@
             this.$message.warning(success.message);
           }else{
 						this.$message.success(success.message);
-						console.log(success.data);
 						this.saveLoginUserModal(success.data);
+						this.$router.push({path: '/'})
 					}
 				}).catch(err => {
 					console.log(err);

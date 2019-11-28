@@ -15,7 +15,8 @@ export default {
     }
   },
   mounted() {
-  	console.log(getUserList());
+		console.log(111);
+		console.log(getUserList());
 		/*service({
       method: 'get',
       url: this.sessionApi + '/getUserList'

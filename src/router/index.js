@@ -4,6 +4,9 @@ import HelloWorld from '@/components/HelloWorld'
 import login from '@/components/session/login'
 import register from '@/components/session/register'
 import Main from '@/components/main/Main'
+import Author from '@/components/main/Author'
+import Home from '@/components/main/Home'
+import Comment from '@/components/main/Comment'
 
 Vue.use(Router)
 
@@ -12,7 +15,25 @@ export default new Router({
     {
       path: '/',
       name: 'Main',
-      component: Main
+      component: Main,
+      redirect: '/index',
+      children:[
+        {
+          path: '/index',
+          name: 'Home',
+          component: Home
+        },
+        {
+          path: '/author',
+          name: 'Author',
+          component: Author
+        },
+        {
+          path: '/comment',
+          name: 'Comment',
+          component: Comment
+        }
+      ]
     },
     {
       path: '/login',
@@ -23,6 +44,15 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: register
+    },
+    {
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })
