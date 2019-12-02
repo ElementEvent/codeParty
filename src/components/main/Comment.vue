@@ -30,6 +30,7 @@
                 :src=" commentItem.avatar !== '' ? commentItem.avatar : imgSrc"
                 alt="">
               <span>{{ commentItem.userName }}</span>
+              <span style="float: right">{{ commentItem.created_time }}</span>
             </div>
             <div class="comment">
               {{ commentItem.comment }}
@@ -73,17 +74,20 @@
 
 			// 新增评论
 			saveComment() {
-				console.log(this.addComment);
-				saveCommentInfo(this.addComment).then(res => {
-					console.log(res);
-					if( res.data.success ){
-						alert(res.data.message);
-						this.addComment.comment = "";
-						this.getCommentsListInfo();
-          }
-				}).catch(err => {
-					console.log(err);
-				})
+				if( this.getLoginUserModal() ) {
+					saveCommentInfo(this.addComment).then(res => {
+						if( res.data.success ){
+							alert(res.data.message);
+							this.addComment.comment = "";
+							this.getCommentsListInfo();
+						}
+					}).catch(err => {
+						console.log(err);
+					})
+        }else{
+					this.$message.warning("请先登录后再发表评论");
+        }
+
 			},
 
 			// 获取评论列表

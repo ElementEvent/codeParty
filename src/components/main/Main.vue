@@ -116,9 +116,9 @@
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 40px 0;
+    /*padding: 40px 0;*/
     box-sizing: border-box;
-    background-color: rgba(51, 51, 51, 0.4);
+    background-color: #fff;
 
     header, footer {
       position: absolute;
@@ -130,10 +130,14 @@
 
     header {
       top: 0;
-      background-color: #fff;
+      background-color: transparent;
       box-sizing: border-box;
       box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.1);
-
+      color: #31b0d5;
+      a{
+        color: #31b0d5;
+        text-decoration: none;
+      }
       div{
         height: 100%;
         line-height: 40px;

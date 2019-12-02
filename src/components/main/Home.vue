@@ -1,5 +1,12 @@
 <template>
-  <div>index</div>
+  <div class="index-body">
+    <div class="word-window bg-img"></div>
+    <div class="word-window bg-img">11</div>
+    <div class="word-window bg-img"></div>
+    <div class="word-window bg-img">22</div>
+    <div class="word-window bg-img"></div>
+    <div class="word-window bg-img">33</div>
+  </div>
 </template>
 
 <script>
@@ -8,6 +15,6 @@
 	}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>
